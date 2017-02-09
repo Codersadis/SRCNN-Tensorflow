@@ -2,10 +2,11 @@
 Tensorflow implementation of Convolutional Neural Networks for super-resolution. The original Matlab and Caffe from official website can be found [here](http://mmlab.ie.cuhk.edu.hk/projects/SRCNN.html).
 
 ## Prerequisites
- * Tensorflow
+ * Tensorflow r0.12
  * Scipy version > 0.18 ('mode' option from scipy.misc.imread function)
  * h5py
  * matplotlib
+ * CUDA 8.0 & cuDNN v5.1 
 
 This code requires Tensorflow. Also scipy is used instead of Matlab or OpenCV. Especially, installing OpenCV at Linux is sort of complicated. So, with reproducing this paper, I used scipy instead. For more imformation about scipy, click [here](https://www.scipy.org/).
 
