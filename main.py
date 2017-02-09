@@ -1,7 +1,5 @@
 from model import SRCNN
-from utils import input_setup
 
-import numpy as np
 import tensorflow as tf
 
 import pprint
@@ -19,6 +17,8 @@ flags.DEFINE_integer("stride", 14, "The size of stride to apply input image [14]
 flags.DEFINE_string("checkpoint_dir", "checkpoint", "Name of checkpoint directory [checkpoint]")
 flags.DEFINE_string("sample_dir", "sample", "Name of sample directory [sample]")
 flags.DEFINE_boolean("is_train", True, "True for training, False for testing [True]")
+flags.DEFINE_boolean("is_default_test_img", True, "True for default test set [True]")
+flags.DEFINE_string("img_name", "", "User designed Test Image")
 FLAGS = flags.FLAGS
 
 pp = pprint.PrettyPrinter()
