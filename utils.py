@@ -69,7 +69,7 @@ def prepare_data(sess, dataset):
   else:
     data_dir = os.path.join(os.sep, (os.path.join(os.getcwd(), dataset)), "Set5")
     data = glob.glob(os.path.join(data_dir, "*.bmp"))
-
+    
   return data
 
 def make_data(sess, data, label):
@@ -128,7 +128,7 @@ def input_setup(sess, config):
 
   sub_input_sequence = []
   sub_label_sequence = []
-  padding = abs(config.image_size - config.label_size) / 2 # 6
+  padding = abs(config.image_size - config.label_size) // 2 # 6
 
   if config.is_train:
     for i in range(len(data)):
@@ -152,8 +152,12 @@ def input_setup(sess, config):
           sub_input_sequence.append(sub_input)
           sub_label_sequence.append(sub_label)
 
-  else:
-    input_, label_ = preprocess(data[2], config.scale)
+  else: 
+    if config.is_default_test_img:  
+      input_, label_ = preprocess(data[2], config.scale)
+    else:
+      filename = config.img_name 
+      input_, label_ = preprocess(filename, config.scale)  
 
     if len(input_.shape) == 3:
       h, w, _ = input_.shape
