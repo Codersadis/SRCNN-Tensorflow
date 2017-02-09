@@ -86,10 +86,10 @@ class SRCNN(object):
     if config.is_train:
       print("Training...")
 
-      for ep in xrange(config.epoch):
+      for ep in range(config.epoch):
         # Run by batch images
         batch_idxs = len(train_data) // config.batch_size
-        for idx in xrange(0, batch_idxs):
+        for idx in range(0, batch_idxs):
           batch_images = train_data[idx*config.batch_size : (idx+1)*config.batch_size]
           batch_labels = train_label[idx*config.batch_size : (idx+1)*config.batch_size]
 

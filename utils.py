@@ -131,7 +131,7 @@ def input_setup(sess, config):
   padding = abs(config.image_size - config.label_size) / 2 # 6
 
   if config.is_train:
-    for i in xrange(len(data)):
+    for i in range(len(data)):
       input_, label_ = preprocess(data[i], config.scale)
 
       if len(input_.shape) == 3:
