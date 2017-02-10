@@ -4,11 +4,8 @@ Scipy version > 0.18 is needed, due to 'mode' option from scipy.misc.imread func
 
 import os
 import glob
-import h5py
-import random
-import matplotlib.pyplot as plt
+import h5py 
 
-from PIL import Image  # for loading images as YCbCr format
 import scipy.misc
 import scipy.ndimage
 import numpy as np
@@ -63,7 +60,6 @@ def prepare_data(sess, dataset):
     For train dataset, output data would be ['.../t1.bmp', '.../t2.bmp', ..., '.../t99.bmp']
   """
   if FLAGS.is_train:
-    filenames = os.listdir(dataset)
     data_dir = os.path.join(os.getcwd(), dataset)
     data = glob.glob(os.path.join(data_dir, "*.bmp"))
   else:

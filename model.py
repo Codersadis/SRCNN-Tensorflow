@@ -6,10 +6,8 @@ from utils import (
 )
 
 import time
-import os
-import matplotlib.pyplot as plt
-
-import numpy as np
+import os 
+ 
 import tensorflow as tf
 
 class SRCNN(object):
